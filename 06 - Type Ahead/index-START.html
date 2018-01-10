@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Type Ahead 👀</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <form class="search-form">
+    <input type="text" class="search" placeholder="">
+    <ul class="suggestions">
+      <li>輸入詞句，找一首詩</li>
+      <li></li>
+    </ul>
+  </form>
+<script>
+//const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+    const endpoint = 'https://gist.githubusercontent.com/soyaine/81399bb2b24ca1bb5313e1985533c640/raw/bdf7df2cbcf70706c4a5e51a7dfb8c933ed78878/TangPoetry.json';
+    const poetrys = [];
+    var mypush = 123;
+    fetch(endpoint)
+        .then(function (blob) { 
+            return blob.json();//blob物件把endpoint中的文本轉成二進制
+        })
+        .then(function (data) {
+            mypush = poetrys.push(...data);
+            /*es6的用法
+            // ES5
+            var arr1 = [0, 1, 2];
+            var arr2 = [3, 4, 5];
+            Array.prototype.push.apply(arr1, arr2);
+
+            // ES6
+            var arr1 = [0, 1, 2];
+            var arr2 = [3, 4, 5];
+            arr1.push(...arr2);
+            */
+            return mypush;
+        })
+    //console.log(mypush);
+    function findMatch(wordToMatch, poetrys) {
+        return poetrys.filter(poet => {
+            const regex = new RegExp(wordToMatch, 'gi')//使用正則表示法 旗標g為找出所有的，否則只找一個,旗標i為不分大小寫,詳情看:https://chentsu.wordpress.com/2014/03/03/javascript-%E6%AD%A3%E8%A6%8F%E8%A1%A8%E9%81%94%E5%BC%8F-regexp-%E5%AF%AB%E6%B3%95/
+            const author = poet.detail_author.join('');//將author去除分隔
+            return poet.detail_text.match(regex) || poet.title.match(regex) || author.match(regex);
+            /*
+            搜尋詞句(detail_text.match)、詩名(tile)、詩人(author)
+            */
+
+        });
+    }
+
+    function displayMatch() {
+        const matches = findMathch(this.value, poetrys);
+        const regex = new RegExp(this.value, 'gi');
+
+    }
+
+
+
+</script>
+  </body>
+</html>

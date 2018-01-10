@@ -1,0 +1,8 @@
+1.正則表示法: https://atedev.wordpress.com/2007/11/23/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%A4%BA%E5%BC%8F-regular-expression/
+2.正則表示法學習網站: https://regex101.com/
+3.String.prototype.replace(): https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replace#Syntax
+4.Array.prototype.join(): https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/join
+5.blob: https://developer.mozilla.org/zh-TW/docs/Web/API/Blob
+6.Fetch: https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch
+7.JavaScript: 正規表達式 RegExp 寫法: https://chentsu.wordpress.com/2014/03/03/javascript-%E6%AD%A3%E8%A6%8F%E8%A1%A8%E9%81%94%E5%BC%8F-regexp-%E5%AF%AB%E6%B3%95/
+8.RegExp: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp
